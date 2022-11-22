@@ -20,10 +20,16 @@ export const MenuContainer = styled.View`
 `;
 
 export const Footer = styled.View`
-  min-height: 110px;
+  min-height: ${isAndroid ? '90px' : '110px'};
   background-color: #fff;
-  padding: 16px ${isAndroid ? '14px' : '24px'};
+  padding: 16px 24px;
 `;
 
 export const FooterContent = styled.SafeAreaView`
+`;
+
+export const CenteredContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
