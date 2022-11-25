@@ -17,7 +17,7 @@ export async function createProduct(req: Request, res: Response) {
       ingredients: ingredients ? JSON.parse(ingredients) : []
     });
 
-    res.status(401).json(product);
+    res.status(201).json(product);
 
   } catch (error) {
     console.log('createCategory ~ error', error);
