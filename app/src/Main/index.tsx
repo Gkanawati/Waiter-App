@@ -103,7 +103,6 @@ export function Main() {
   useEffect(() => {
     Promise.all([api.get('/categories'), api.get('/products')])
       .then(([categoriesResponse, productsResponse]) => {
-        console.log(JSON.stringify(productsResponse.data, null, 2));
         setCategories(categoriesResponse.data);
         setProducts(productsResponse.data);
         setIsLoading(false);
