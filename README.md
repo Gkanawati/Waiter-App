@@ -48,6 +48,8 @@ Acesse a documentação de cada projeto:
 
 <div align='center' style="justify-content: center; align-items: center;">
 
+<h3>Mobile - App do Garçom</h3>
+
 <img src='https://user-images.githubusercontent.com/87530595/204069637-770d8300-9538-47e4-a089-e8c0a669cfc8.png' height='450' />
 
 <img src='https://user-images.githubusercontent.com/87530595/204069639-d1dcecb6-b967-43d0-b8bb-03c5af6dd345.png' height='450' />
@@ -66,7 +68,7 @@ Acesse a documentação de cada projeto:
 <br/>
 <br/>
 
-</div>
+<h3>Plataforma Web - Utilizada na cozinha</h3>
 
 ![waiter-app-web1](https://user-images.githubusercontent.com/87530595/204069894-7f61e068-52ef-4390-8501-bfa8e07131e6.png)
 
@@ -75,3 +77,5 @@ Acesse a documentação de cada projeto:
 ![waiter-app-web3](https://user-images.githubusercontent.com/87530595/204069804-ee1b280a-5fa8-4a2e-80ce-2a6ab7bfad66.png)
 
 ![waiter-app-web4](https://user-images.githubusercontent.com/87530595/204069806-965a9a8c-05d1-40f7-8d33-a336d78b14e1.png)
+
+</div>
