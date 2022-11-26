@@ -1,3 +1,5 @@
+![WaiterApp-Capa](https://user-images.githubusercontent.com/87530595/204070663-280a66ce-63c5-4fa3-9034-49e137817c48.png)
+
 <p align="center">
   <img alt="Waiter App - O App do Garçom" width='280px' src="/fe/src/assets/images/logo.svg" />
 </p>
