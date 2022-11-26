@@ -9,9 +9,19 @@ interface OrderModalProps {
   visible: boolean;
   order: Order | null;
   onClose: () => void;
+  onCancelOrder: () => Promise<void>;
+  isLoading: boolean;
+  onChangeOrderStatus: () => void;
 }
 
-export function OrderModal({ order, visible, onClose }: OrderModalProps) {
+export function OrderModal({
+  order,
+  visible,
+  onClose,
+  onCancelOrder,
+  isLoading,
+  onChangeOrderStatus,
+}: OrderModalProps) {
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -21,7 +31,6 @@ export function OrderModal({ order, visible, onClose }: OrderModalProps) {
     document.addEventListener('keydown', handleKeyDown);
 
     function handleClickCloseModal(event: MouseEvent) {
-      console.log(event);
       const overlay = document.getElementById('overlay');
 
       if (event.target === overlay) {
@@ -100,13 +109,29 @@ export function OrderModal({ order, visible, onClose }: OrderModalProps) {
         </OrderDetails>
 
         <Actions>
-          <button type='button' className='primary'>
-            <span>👨🏻‍🍳</span>
+          {order.status !== 'DONE' && (
+            <button
+              type='button'
+              className='primary'
+              disabled={isLoading}
+              onClick={onChangeOrderStatus}
+            >
+              <span>{order.status === 'WAITING' ? '👨🏻‍🍳' : '✅'}</span>
 
-            <strong>Iniciar Produção</strong>
-          </button>
+              <strong>
+                {order.status === 'WAITING'
+                  ? 'Iniciar Produção'
+                  : 'Concluir Pedido'}
+              </strong>
+            </button>
+          )}
 
-          <button type='button' className='secondary'>
+          <button
+            type='button'
+            className='secondary'
+            onClick={onCancelOrder}
+            disabled={isLoading}
+          >
             Cancelar Pedido
           </button>
         </Actions>

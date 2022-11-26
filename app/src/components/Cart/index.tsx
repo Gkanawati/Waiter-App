@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FlatList, TouchableOpacity } from 'react-native';
 import { CartItem } from '../../@types/CartItem';
 import { Product } from '../../@types/Product';
-import { api } from '../../utils/api';
+import { api, baseURL } from '../../utils/api';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { Button } from '../Button';
 import { OrderConfirmedModal } from '../ConfirmedModal';
@@ -74,7 +74,7 @@ export function Cart({
               <ProductContainer>
                 <Image
                   source={{
-                    uri: `http://192.168.1.5:3333/uploads/${cartItem.product.imagePath}`,
+                    uri: `${baseURL}/uploads/${cartItem.product.imagePath}`,
                   }}
                 />
 

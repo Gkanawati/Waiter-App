@@ -12,6 +12,7 @@ import {
   AddToCartButton,
 } from './styles';
 import { Product } from '../../@types/Product';
+import { baseURL } from '../../utils/api';
 
 interface MenuProps {
   products: Product[];
@@ -36,7 +37,7 @@ export function Menu({ onAddToCart, products }: MenuProps) {
           <ProductContainer onPress={() => handleOpenModal(product)}>
             <ProductImage
               source={{
-                uri: `http://192.168.1.5:3333/uploads/${product.imagePath}`,
+                uri: `${baseURL}/uploads/${product.imagePath}`,
               }}
             />
             <ProductDetails>
@@ -54,7 +55,7 @@ export function Menu({ onAddToCart, products }: MenuProps) {
           </ProductContainer>
         )}
         style={{ marginTop: 32 }}
-        contentContainerStyle={{ paddingHorizontal: 24 }}
+        contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 16 }}
         ItemSeparatorComponent={Separator}
       />
 
