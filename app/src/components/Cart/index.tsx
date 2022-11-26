@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FlatList, TouchableOpacity } from 'react-native';
 import { CartItem } from '../../@types/CartItem';
 import { Product } from '../../@types/Product';
+import { api } from '../../utils/api';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { Button } from '../Button';
 import { OrderConfirmedModal } from '../ConfirmedModal';
@@ -21,13 +22,15 @@ import {
 
 interface CartProps {
   cartItems: CartItem[];
+  selectedTable: string;
   onAdd: (product: Product) => void;
-  onDecrement: (product: Product) => void;
   onConfirmOrder: () => void;
+  onDecrement: (product: Product) => void;
 }
 
 export function Cart({
   cartItems,
+  selectedTable,
   onAdd,
   onDecrement,
   onConfirmOrder,
@@ -44,8 +47,19 @@ export function Cart({
     return acc + cartItem.quantity * cartItem.product.price;
   }, 0);
 
-  function handleConfirmOrder() {
+  async function handleConfirmOrder() {
+    setIsLoading(true);
+    const payload = {
+      table: selectedTable,
+      products: cartItems.map((cartItem) => ({
+        product: cartItem.product._id,
+        quantity: cartItem.quantity,
+      })),
+    };
+
+    await api.post('/orders', payload);
     setVisibleConfirmedModal(true);
+    setIsLoading(false);
   }
 
   return (
@@ -60,7 +74,7 @@ export function Cart({
               <ProductContainer>
                 <Image
                   source={{
-                    uri: `http://192.168.1.4:3333/uploads/${cartItem.product.imagePath}`,
+                    uri: `http://192.168.1.5:3333/uploads/${cartItem.product.imagePath}`,
                   }}
                 />
 

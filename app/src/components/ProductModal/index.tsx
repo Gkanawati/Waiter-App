@@ -48,7 +48,7 @@ export function ProductModal({
     >
       <Image
         source={{
-          uri: `http://192.168.1.4:3333/uploads/${product.imagePath}`,
+          uri: `http://192.168.1.5:3333/uploads/${product.imagePath}`,
         }}
       >
         <CloseButton onPress={onClose}>
