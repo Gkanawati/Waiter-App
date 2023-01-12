@@ -16,7 +16,7 @@ A plataforma web foi construída utilizando React e será a responsável por for
 
 A nossa api foi construída com node js, utilizando o express. Foi utilizado o Multer para download em disco das imagens enviadas e o Socket.io para a conexão em tempo real com websocket entre as plataformas.
 
-A plataforma foi construída utilizando Next.js para a construção do frontend e NodeJs com Prisma e SQLite no banco de dados para a construção das APIs consumidas pela plataforma. Os dados persistidos pelo site são variáveis e recebem todas as informações via API do server.
+A plataforma foi construída utilizando Vite para a construção do frontend e NodeJs com Prisma e SQLite no banco de dados para a construção das APIs consumidas pela plataforma. Os dados persistidos pelo site são variáveis e recebem todas as informações via API do server.
 
 As principais bibliotecas JS utilizadas nesse projeto são: Express para a construção da API, mongoDB como banco de dados da aplicação, Multer para o download das imagens enviadas para registro dos produtos cadastrados, Socket.io para a utilização de websocket na plataforma para receber os pedidos em tempo real em tela da plataforma web, Docker para a realização da conexão com o banco em containers, Styled Components para a estilização da plataforma web e app mobile. 📚
 
