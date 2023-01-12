@@ -12,7 +12,7 @@ Nessa Aplicação temos o diretório web, mobile e a api.
 
 O app mobile será utilizado pelos garçons, anotando os pedidos das mesas. E a partir do app, o pedido é enviado em tempo real para a plataforma web do Waiter App, onde o pedido é automaticamente inserido na fila de espera da cozinha.
 
-A plataforma web foi construída utilizando com React e será a responsável por fornecer à cozinha do restaurante quais sao os pedidos e os seus respectivos status, podendo alterá-lo pela plataforma conforme o pedido avança ou também pode cancelar o respectivo pedido.
+A plataforma web foi construída utilizando React e será a responsável por fornecer à cozinha do restaurante quais sao os pedidos e os seus respectivos status, podendo alterá-lo pela plataforma conforme o pedido avança ou também pode cancelar o respectivo pedido.
 
 A nossa api foi construída com node js, utilizando o express. Foi utilizado o Multer para download em disco das imagens enviadas e o Socket.io para a conexão em tempo real com websocket entre as plataformas.
 
